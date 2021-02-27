@@ -1,5 +1,6 @@
 import 'package:app/Components/Button/index.dart';
 import 'package:app/Components/Input/index.dart';
+import 'package:app/Container/Dashboard/index.dart';
 import 'package:flutter/material.dart';
 
 class App extends StatefulWidget {
@@ -10,8 +11,8 @@ class App extends StatefulWidget {
 
 class _AppState extends State<App> {
 
-  TextEditingController email = TextEditingController();
-  TextEditingController password = TextEditingController();
+  TextEditingController _email = TextEditingController();
+  TextEditingController _password = TextEditingController();
 
   @override
 
@@ -32,13 +33,13 @@ class _AppState extends State<App> {
               hint: "Enter Email",
               password: false,
               keyboardType: TextInputType.emailAddress,
-              controller: email,
+              controller: _email,
             ),
             Input(
               label: "Password",
               hint : "Enter Password",
               password: true,
-              controller: password,
+              controller: _password,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -47,19 +48,34 @@ class _AppState extends State<App> {
                   text: "Login",
                   color: Colors.red,
                   onPress: (){
-                    print("Email: ${email.text} Password: ${password.text}");
+                    print("Email: ${_email.text} Password: ${_password.text}");
                   },
                 ),
                 Button(
                   text: "Signup",
                   color: Colors.blue,
+                  onPress: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context)=> Dashboard())
+                    );
+                  },
                 ),
               ],
-            )
+            ),
+            Container(
+              margin: EdgeInsets.all(10),
+            ),
+            Text(
+              "Don't have accont? Signup",
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold
+              ),
+            ),
           ],
         ),
       )
     );
   }
 }
-

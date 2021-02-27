@@ -57,7 +57,7 @@ class _AppState extends State<App> {
                   onPress: (){
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context)=> Dashboard())
+                      MaterialPageRoute(builder: (context)=> Dashboard(email: _email.text,))
                     );
                   },
                 ),

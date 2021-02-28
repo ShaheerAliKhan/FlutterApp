@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'Container/Dashboard/index.dart';
 import 'Container/Login/index.dart';
+import 'Container/Signup/index.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,7 +15,11 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.teal,
       ),
       title: "Flutter App",
-      home: App()
+      home: App(),
+      routes: {
+        "signup" : (context)=> Signup(),
+        "dashboard" : (context)=>Dashboard()
+      },
     );
   }
 }

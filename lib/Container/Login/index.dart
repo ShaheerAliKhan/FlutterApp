@@ -1,7 +1,5 @@
 import 'package:app/Components/Button/index.dart';
 import 'package:app/Components/Input/index.dart';
-import 'package:app/Container/Dashboard/index.dart';
-import 'package:app/Container/Signup/index.dart';
 import 'package:flutter/material.dart';
 import 'package:touchable_opacity/touchable_opacity.dart';
 
@@ -61,12 +59,13 @@ class _AppState extends State<App> {
 
               var email =_email.text == "" ?  false : true;
               var password = _password.text == "" ? false : true;
-              
+
               if(email && password){
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context)=> Dashboard(email: _email.text))
-                );
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(builder: (context)=> Dashboard(email: _email.text))
+                // );
+                Navigator.pushNamed(context, 'dashboard');
               } 
             },
           ),
@@ -79,10 +78,11 @@ class _AppState extends State<App> {
               Text(account+" "),
               TouchableOpacity(
                 onTap : (){
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context)=> Signup())
-                  );
+                  Navigator.pushNamed(context, "signup");
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(builder: (context)=> Signup())
+                  // );
                 },
                 child: Text('Signup!',
                   style: TextStyle(

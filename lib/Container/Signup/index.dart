@@ -19,6 +19,13 @@ class _SignupState extends State<Signup> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Text(
+            'Welcome To Application',
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold
+            ),
+          ),
           Input(
             hint: "Enter Full Name",
             label: "Full Name",
@@ -48,13 +55,9 @@ class _SignupState extends State<Signup> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(account+" "),
-
               TouchableOpacity(
                 onTap : (){
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context)=> Signup())
-                  );
+                  Navigator.pop(context);
                 },
                 child: Text('Login!',
                   style: TextStyle(

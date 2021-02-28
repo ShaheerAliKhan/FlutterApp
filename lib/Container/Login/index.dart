@@ -32,6 +32,13 @@ class _AppState extends State<App> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Text(
+            'Welcome To Application',
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
           Input(
             label: "Email",
             hint: "Enter Email",
@@ -62,7 +69,7 @@ class _AppState extends State<App> {
                 );
               } 
             },
-            ),
+          ),
           Container(
             margin: EdgeInsets.all(10),
           ),

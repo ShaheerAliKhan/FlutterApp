@@ -18,17 +18,20 @@ class Button extends StatelessWidget {
   return TouchableOpacity(
       onTap: onPress,
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 5),
-        padding: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+        margin: EdgeInsets.symmetric(horizontal: 10),
+        padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
         decoration: BoxDecoration(
           color: color,
-          borderRadius: BorderRadius.circular(100)
+          borderRadius: BorderRadius.circular(8),
         ),
+        width: MediaQuery.of(context).size.width,
         child: Text(
           text,
+          textAlign: TextAlign.center,
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            color: Colors.white
+            color: Colors.white,
+            fontSize: 18
           ),
         ),
       ),

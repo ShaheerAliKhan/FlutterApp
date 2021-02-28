@@ -1,68 +1,46 @@
 import 'package:app/Components/Button/index.dart';
 import 'package:app/Components/Input/index.dart';
-import 'package:app/Container/Dashboard/index.dart';
-import 'package:app/Container/Signup/index.dart';
 import 'package:flutter/material.dart';
 import 'package:touchable_opacity/touchable_opacity.dart';
 
-class App extends StatefulWidget {
-
+class Signup extends StatefulWidget {
   @override
-  _AppState createState() => _AppState();
+  _SignupState createState() => _SignupState();
 }
 
-class _AppState extends State<App> {
-  TextEditingController _email = TextEditingController();
-  TextEditingController _password = TextEditingController();
-
+class _SignupState extends State<Signup> {
   @override
-
-  void initState(){
-    super.initState();
-  }
-  
   Widget build(BuildContext context) {
-
-    var account = "Dont Have Account?";
-
+    var account = "Already have an account?";
     return Scaffold(
       appBar: AppBar(
-        title: Text('Login'),
+        title: Text("Signup"),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Input(
-            label: "Email",
-            hint: "Enter Email",
-            password: false,
-            keyboardType: TextInputType.emailAddress,
-            controller: _email,
+            hint: "Enter Full Name",
+            label: "Full Name",
           ),
           Input(
-            label: "Password",
-            hint : "Enter Password",
-            password: true,
-            controller: _password,
+            hint: "Enter Email",
+            label: "Email",
           ),
-            Button(
-            text: "Login",
+          Input(
+            hint: "Enter Password",
+            label: "Password",
+            password: true,
+          ),
+          Input(
+            hint: "Confirm Password",
+            label: "Confirm Password",
+            password: true,
+          ),
+          Button(
+            text: 'Signup',
             color: Colors.teal,
-            onPress: (){
-
-              print("Email: ${_email.text} Password: ${_password.text}");
-
-              var email =_email.text == "" ?  false : true;
-              var password = _password.text == "" ? false : true;
-              
-              if(email && password){
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context)=> Dashboard(email: _email.text))
-                );
-              } 
-            },
-            ),
+          ),
           Container(
             margin: EdgeInsets.all(10),
           ),
@@ -70,6 +48,7 @@ class _AppState extends State<App> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(account+" "),
+
               TouchableOpacity(
                 onTap : (){
                   Navigator.push(
@@ -77,7 +56,7 @@ class _AppState extends State<App> {
                     MaterialPageRoute(builder: (context)=> Signup())
                   );
                 },
-                child: Text('Signup!',
+                child: Text('Login!',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.blue

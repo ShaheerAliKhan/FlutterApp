@@ -10,11 +10,13 @@ class Dashboard extends StatelessWidget {
       appBar: AppBar(
         title: Text('Dashboard'),
       ),
-      drawer: Drawer(
-        child: DrawerHeader(
-          child: Container(
-            child: Text(email),
-          ) 
+      body: Container(
+        child: Column(
+          children: [
+            Text(
+              email
+            ),
+          ],
         ),
       ),
     );

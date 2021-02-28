@@ -7,16 +7,14 @@ class Input extends StatelessWidget {
   final TextInputType keyboardType;
   final TextEditingController controller;
 
-  const Input(
-    {
+  const Input({
       Key key, 
       this.label : "Enter Placeholder", 
       this.hint : "Enter Hint", 
       this.password : false,
       this.keyboardType : TextInputType.text, 
       this.controller
-      }
-  ) : super(key: key);
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +29,7 @@ class Input extends StatelessWidget {
           hintText: hint,
           border: OutlineInputBorder(),
         ),
-      ),
+      )
     );
   }
 }

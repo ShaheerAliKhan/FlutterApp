@@ -2,6 +2,7 @@ import 'package:app/Components/Button/index.dart';
 import 'package:app/Components/Input/index.dart';
 import 'package:flutter/material.dart';
 import 'package:touchable_opacity/touchable_opacity.dart';
+import 'package:app/Config/index.dart' as Config;
 
 class App extends StatefulWidget {
 
@@ -52,7 +53,7 @@ class _AppState extends State<App> {
           ),
             Button(
             text: "Login",
-            color: Colors.teal,
+            color: Config.appColor,
             onPress: (){
 
               print("Email: ${_email.text} Password: ${_password.text}");
@@ -87,7 +88,7 @@ class _AppState extends State<App> {
                 child: Text('Signup!',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: Colors.blue
+                    color: Config.appColor
                   ),
                 )
               )

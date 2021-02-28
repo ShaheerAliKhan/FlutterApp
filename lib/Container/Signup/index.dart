@@ -2,6 +2,7 @@ import 'package:app/Components/Button/index.dart';
 import 'package:app/Components/Input/index.dart';
 import 'package:flutter/material.dart';
 import 'package:touchable_opacity/touchable_opacity.dart';
+import 'package:app/Config/index.dart' as Config;
 
 class Signup extends StatefulWidget {
   @override
@@ -46,7 +47,7 @@ class _SignupState extends State<Signup> {
           ),
           Button(
             text: 'Signup',
-            color: Colors.teal,
+            color: Config.appColor,
           ),
           Container(
             margin: EdgeInsets.all(10),
@@ -62,7 +63,7 @@ class _SignupState extends State<Signup> {
                 child: Text('Login!',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: Colors.blue
+                    color: Config.appColor
                   ),
                 )
               )
